@@ -1,10 +1,17 @@
 require 'sinatra'
 require 'json'
 require 'twitter'
+require_relative './config'
 
 ##  Two Sinatra routes for index (map) and tweets:
 get '/' do
   File.read(File.join('public', 'index.html'))
+end
+
+get '/constants.js' do
+   status 200
+   headers 'content-type' => 'application/javascript'
+   body "ROOT_URL = 'http://#{ROOT_URL}'"
 end
 
 ##  Use post to get geolocation from client:
@@ -19,17 +26,18 @@ end
 
 def getNearTweets(lat, lng)
   ## Build a Twitter client with my details:
-  config = {
-    consumer_key:  "I9dbf9099kftgXcplwICg6K8J",
-    consumer_secret: "FVDpNk0dysJhoKk3RRV3ZQifQyXyXc0Kyfdxlc12siRlOzyL5G",
-    access_token: "3770776815-GL8FPVtLnf2NyxmU0a87ZVD8ACQZvLml7NO8cfs",
-    access_token_secret: "z9PZoCsnS5aGTqllenD7qJk9SYu1DbUQWAHsPnZWikYHL",
+  authent = {
+    consumer_key: CONSUMER_KEY,
+    consumer_secret: CONSUMER_SECRET,
+    access_token: ACCESS_TOKEN,
+    access_token_secret: ACCESS_TOKEN_SECRET,
   }
-  client = Twitter::REST::Client.new(config);
+  client = Twitter::REST::Client.new(authent);
 
   ## Query the API:
   numTweets = 100
   geo = "#{lat},#{lng},10mi"
+
   tweets = []
   results = client.search("q:", geocode: geo, result_type: "recent")
   ##  Parse away all but 3 fields:

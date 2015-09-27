@@ -1,7 +1,7 @@
 
 //  Object for handling server requests.
-function TwitInterface(port) {
-  this.port = port;
+//  Recursive function polls the server every 4s.
+function TwitInterface() {
   this.delay = 10;
 }
 
@@ -17,7 +17,7 @@ TwitInterface.prototype = {
   run: function() {
     window.setTimeout(function(self) {
         return function() {
-            self.delay = 20000;
+            self.delay = 4000;
             self.loopStep();
             self.run()
         }
@@ -31,8 +31,7 @@ TwitInterface.prototype = {
       // Pass the server the geolocation.
       var form = new FormData();
       form.append("location", JSON.stringify(this.position));
-      request.open("POST", "http://static-web.functorama.mor:"
-            + this.port + "/tweets", true);
+      request.open("POST", ROOT_URL+"/tweets", true);
 
       // Pass this twitInterface to a function and closure.
       request.onreadystatechange = function(self){
@@ -44,6 +43,6 @@ TwitInterface.prototype = {
         }
       }(this);
       request.send(form);
+    }
   }
-}
 }

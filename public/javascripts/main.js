@@ -3,8 +3,7 @@
 //  Creates a GMap, an interface for server callbacks,
 //  object for marker plotting.
 function initMap() {
-  var port = 4567;             //  Ruby default port.
-  var twitInterface = new TwitInterface(port);
+  var twitInterface = new TwitInterface();
   var tweography = new Tweography(twitInterface);
   tweography.findPosition();        // Async
 
@@ -20,5 +19,5 @@ function initMap() {
   // Popup out of the way
   window.setTimeout(function() {
     tweography.infoWindow.close();
-  }, 7000);
+  }, 6000);
 }
