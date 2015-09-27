@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Gavin Leech but really Express plus BoyCook some APIs">
+
+    <title>Tweography: a local tweet map</title>
+
+    <link href="stylesheets/css.css" rel="stylesheet">
+  </head>
+
+  <body>
+		<!-- The map itself -->
+    <div id="map"></div>
+
+    <!-- Oldschool script loading -->
+    <script ></script>
+    <script src="javascripts/main.js"></script>
+    <script src="javascripts/twitInterface.js"></script>
+    <script src="javascripts/plotter.js"></script>
+    <script src="javascripts/tweography.js"></script>
+
+		<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2sG0QBDcSwIW_vpj-jebIWCRGXXdxBXo&callback=initMap">
+    </script>
+
+		<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Tweography: a map of your local tweets</a>
+            </div>
+        </div>
+    </nav>
+
+  </body>
+</html>
