@@ -17,7 +17,7 @@ TwitInterface.prototype = {
   run: function() {
     window.setTimeout(function(self) {
         return function() {
-            self.delay = 4000;
+            self.delay = 4500;
             self.loopStep();
             self.run()
         }

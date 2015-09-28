@@ -17,7 +17,6 @@ Plotter.prototype = {
       	var marker = new google.maps.Marker({
   					map: gmap,
   					position: myLatLng,
-            animation: google.maps.Animation.DROP,
             icon: this.image,
   					title: tweet.text
   			});

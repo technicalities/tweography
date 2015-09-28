@@ -11,7 +11,7 @@ end
 get '/constants.js' do
    status 200
    headers 'content-type' => 'application/javascript'
-   body "ROOT_URL = 'http://#{ROOT_URL}'"
+   body "ROOT_URL = '#{ROOT_URL}'"
 end
 
 ##  Use post to get geolocation from client:
