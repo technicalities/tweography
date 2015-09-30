@@ -9,7 +9,6 @@ function initMap() {
 
   // Create marker creator:
   var plotter = new Plotter();
-
   // Create callback from interface to plotter:
   twitInterface.onTweets(function (tweets) {
     plotter.plotTweets(tweets, tweography.gmap);

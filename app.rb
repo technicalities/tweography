@@ -14,7 +14,7 @@ get '/constants.js' do
    body "ROOT_URL = '#{ROOT_URL}'"
 end
 
-##  Use post to get geolocation from client:
+##  Use posted request to get geolocation from client:
 post '/tweets' do
   json = params['location']
   locationDict = JSON.parse(json)

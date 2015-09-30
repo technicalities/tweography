@@ -2,6 +2,7 @@
 //  Create a GMap, centre it on the user.
 function Tweography(twitInterface) {
   this.gmap = new google.maps.Map(document.getElementById('map'), {
+		// Default to Glasgow for smooth loading.
     center: {lat: 55.873330, lng: -4.257874},
     zoom: 10
   });

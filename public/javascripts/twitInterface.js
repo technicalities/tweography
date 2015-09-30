@@ -26,14 +26,14 @@ TwitInterface.prototype = {
 
   loopStep: function() {
     if (typeof this.position !== undefined && this.position) {
-      // Send request to server and tehn to twitter
+      // Send request to server and on to twitter
       var request = new XMLHttpRequest();
       // Pass the server the geolocation.
       var form = new FormData();
       form.append("location", JSON.stringify(this.position));
       request.open("POST", ROOT_URL+"/tweets", true);
 
-      // Pass this twitInterface to a function and closure.
+      // Pass this twitInterface to a closure.
       request.onreadystatechange = function(self){
         return function(){
           if (request.readyState == 4 && request.status == 200){
