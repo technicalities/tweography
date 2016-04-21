@@ -1,6 +1,8 @@
 # [Tweography]
 
-Tweography is a simple single-page Sinatra/JS app for displaying on a Google Map the most recent tweets around your location. There's a temperamental, Firefox-only version [in a slow but free Heroku instance here](https://limitless-chamber-9916.herokuapp.com/).
+Tweography is a simple single-page Sinatra/JS app for displaying on a Google Map the most recent tweets around your location. 
+
+[//]: <> There's a temperamental, Firefox-only version [in a slow but free Heroku instance here](https://limitless-chamber-9916.herokuapp.com/).
 
 
 ## Build instructions
